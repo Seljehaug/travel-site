@@ -3,6 +3,7 @@ watch = require('gulp-watch'),
 browserSync = require('browser-sync').create();
 
 gulp.task('watch', function () {
+
   browserSync.init({
     notify: false,
     server: {
@@ -11,7 +12,7 @@ gulp.task('watch', function () {
   });
 
   watch('./app/index.html', function () {
-    gulp.start('html');
+    browserSync.reload();
   });
 
   watch('./app/assets/styles/**/*.css', function () {
